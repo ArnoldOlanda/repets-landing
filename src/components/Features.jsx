@@ -1,6 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import {Img2} from '../assets/Img2.jsx'
+import arnold from '../assets/arnold.jfif'
+import chili from '../assets/chili.jfif'
+import gab from '../assets/gab.webp'
+import jeremy from '../assets/jeremy.jfif'
 import {House,Chat,Map,App} from '../assets/Icons.jsx'
 import "@fontsource/inter"
 import "@fontsource/alata"
@@ -24,7 +28,7 @@ export const Features = () => {
             <Text2>Comunicacion rapida con el hospedador</Text2>
           </Box2>
         </Box0>
-        <Img2></Img2>
+        <Img2 ></Img2>
         <Box0>
           <Box2>
             <Box3>
@@ -46,16 +50,20 @@ export const Features = () => {
 
       <Equipo>
         <Miembro>
+          <Perfil src={gab}/>
           <Text3>Gabriel Tuco</Text3>
 
         </Miembro>
         <Miembro>
+          <Perfil src={arnold}/>
           <Text3>Arnold Olanda</Text3>
         </Miembro>
         <Miembro>
+          <Perfil src={chili}/>
           <Text3>Christian Chilli</Text3>
         </Miembro>
         <Miembro>
+          <Perfil src={jeremy}/>
           <Text3>Jeremy Huaringa</Text3>
         </Miembro>
      
@@ -81,6 +89,7 @@ const Text = styled.p`
   font-size: 32px;
   font-family: 'Inter';
   font-weight: 600;
+  margin-bottom: 0;
 `
 
 const Box0 = styled.div`
@@ -94,14 +103,14 @@ const Box1 = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-wrap: wrap;
 `
 
 const Box2 = styled.div`
   display: flex;
   flex-direction: row;
-
+  margin-top: 10%;
   align-items: center;
   justify-content: center;
   width: 380px;
@@ -118,9 +127,15 @@ const Text2 = styled.p`
 
 const Text3 = styled.p`
   font-family: 'Inter';
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
   margin-left: 5px;
+  padding: 0;
+  margin: 0;
+  margin-top: 10px;
+  @media querys{
+    
+  }
 `
 
 const Box3 = styled.div`
@@ -138,14 +153,25 @@ const Equipo = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
 `
+const Perfil =styled.img`
+  width: 80%;
+  border-radius: 14px;
+`
+
 const Miembro = styled.div`
+ display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 270px;
-  height: 316px;
   border-radius: 14px;
   border: 1px solid #2782CA;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 20px 20px;
+  padding:  10px;
+  box-sizing: border-box;
 `

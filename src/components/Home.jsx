@@ -5,7 +5,15 @@ import "@fontsource/inter"
 import "@fontsource/alata"
 import img1 from '../assets/img1.png'
 import { Topbar } from './Topbar.jsx'
+import { useWindowDimensions } from "../hooks/Window.jsx";
+
+//<div style={{width:"20%"}}></div>
 export const Home = () => {
+  const downloadTxtFile =() =>{
+
+  }
+
+  const { height, width } = useWindowDimensions();
   return (
     <Principal>
       <Topbar/>
@@ -17,13 +25,13 @@ export const Home = () => {
           <Text2>
             Encuentra el lugar perfecto para dejar a tu mascota. Unete a nosotros y descubre el mejor lugar para hospedar a tu mascota
           </Text2>
-          <ButtonDown>
+          <ButtonDown onClick={downloadTxtFile}>
             <p style={{flex:1, textAlign:"center"}}>Descargar</p>
             <Android />
           </ButtonDown>
         </Box1>
-        <div style={{width:"20%"}}></div>
-        <img height="500" src={img1} style={{paddingBottom: "10%"}}/>
+        
+        <Img1 src={img1} />
       </Container>
     </Principal>
   )
@@ -34,11 +42,15 @@ const Principal = styled.div`
     display: flex;
     flex-direction: column;
     background: linear-gradient(311.76deg, #D0E5FF -12.2%, #D9EAFE 0.54%, #E4F0FE 2.5%, #FFFFFF 81.89%);
+    box-sizing: border-box;
+    padding: 20px;
     //background-color: green;
 `
 
 const Container = styled.div`
+  
     flex:1;
+    box-sizing: border-box;
     //height: 80vh;
     //background: linear-gradient(311.76deg, #D0E5FF -12.2%, #D9EAFE 0.54%, #E4F0FE 2.5%, #FFFFFF 81.89%);
     //background-color: green;
@@ -61,11 +73,16 @@ const ButtonDown = styled.div`
     color: #2782CA;
     font-family: 'Inter';
     font-weight: 600;
+    border-radius: 6px;
+    :hover{
+      background-color: #c5e5ff;
+    }
+
 `
 const Box1 = styled.div`
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 10%;
+  display: flex;
+  flex-direction: column;
+  //margin-bottom: 10%;
 `
 
 const Text1 = styled.p`
@@ -88,4 +105,18 @@ const Text2 = styled.p`
   font-style: normal;
   text-align: justify;
 
+`
+const Img1 = styled.img`
+  //margin-bottom: 10%;
+  @media (min-width: 1240px) {
+    width: 25%;
+    margin-left: 15%;
+    
+  }
+  @media (max-width: 1240px) {
+    width: 400px;
+    margin-left: 15%;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
 `
