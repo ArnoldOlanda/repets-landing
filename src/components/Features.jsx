@@ -11,14 +11,14 @@ import "@fontsource/alata"
 export const Features = () => {
   return (
     <Principal>
-      <Text>Caracteristcas de RE-PETS</Text>
+      <Text>Caracteristicas de RE-PETS</Text>
       <Box1>
         <Box0>
           <Box2>
             <Box3>
               <House/>
             </Box3>
-            <Text2>Facilmente encontraras el hospedaje ideal para tu mascotas</Text2>
+            <Text2>Facilmente encontraras el hospedaje ideal para tus mascotas</Text2>
           </Box2>
           <div style={{height:"20%"}}></div>
           <Box2>

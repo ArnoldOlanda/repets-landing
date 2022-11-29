@@ -9,15 +9,15 @@ import { useWindowDimensions } from "../hooks/Window.jsx";
 
 //<div style={{width:"20%"}}></div>
 export const Home = () => {
-  const downloadTxtFile =() =>{
-     const element = document.createElement("a");
-     element.href = "https://repetsapi-production.up.railway.app/repets-apk.apk"
-     element.download = "100ideas-" + Date.now() + ".txt";
+  // const downloadTxtFile =() =>{
+  //    const element = document.createElement("a");
+  //    element.href = "https://repetsapi-production.up.railway.app/repets-apk.apk"
+  //    element.download = "100ideas-" + Date.now() + ".txt";
  
-     // simulate link click
-     document.body.appendChild(element); // Required for this to work in FireFox
-     element.click();
-  }
+  //    // simulate link click
+  //    document.body.appendChild(element); // Required for this to work in FireFox
+  //    element.click();
+  // }
 
   const { height, width } = useWindowDimensions();
   return (
@@ -31,8 +31,9 @@ export const Home = () => {
           <Text2>
             Encuentra el lugar perfecto para dejar a tu mascota. Unete a nosotros y descubre el mejor lugar para hospedar a tu mascota
           </Text2>
-          <ButtonDown onClick={downloadTxtFile}>
-            <p style={{flex:1, textAlign:"center"}}>Descargar</p>
+          <ButtonDown>
+            <a href='https://repetsapi-production.up.railway.app/repets-apk.apk' 
+            style={{flex:1, textAlign:"center", color: '#2782CA', textDecoration:'none'}}>Descargar</a>
             <Android />
           </ButtonDown>
         </Box1>
@@ -74,7 +75,7 @@ const ButtonDown = styled.div`
     flex-direction: row;
     box-shadow: 0px 7px 22px -6px rgba(33, 123, 244, 0.34);
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 5px 20px;
     align-items: center;
     color: #2782CA;
     font-family: 'Inter';
