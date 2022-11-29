@@ -10,7 +10,13 @@ import { useWindowDimensions } from "../hooks/Window.jsx";
 //<div style={{width:"20%"}}></div>
 export const Home = () => {
   const downloadTxtFile =() =>{
-
+     const element = document.createElement("a");
+     element.href = "https://repetsapi-production.up.railway.app/repets-apk.apk"
+     element.download = "100ideas-" + Date.now() + ".txt";
+ 
+     // simulate link click
+     document.body.appendChild(element); // Required for this to work in FireFox
+     element.click();
   }
 
   const { height, width } = useWindowDimensions();
